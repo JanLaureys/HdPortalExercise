@@ -26,7 +26,7 @@ class DogBreeds extends React.Component {
 
   // Load initial page.
   componentDidMount() {
-    this.loadData(`https://hdportal.ddev.site/jsonapi/hd_entry/hd_entry?page[limit]=${this.state.pageSize}`);
+    this.loadData(`jsonapi/hd_entry/hd_entry?page[limit]=${this.state.pageSize}`);
   }
 
   // Load the previous page
@@ -40,9 +40,10 @@ class DogBreeds extends React.Component {
   }
 
   render() {
+    // These classes are just some classes from Olivero, to give the table some default styling.
     return (
-      <div>
-        <table>
+      <div className={"forum"}>
+        <table className={"draggable-table"}>
           <thead>
           <tr>
             <th>ID</th>
@@ -58,8 +59,8 @@ class DogBreeds extends React.Component {
           ))}
           </tbody>
         </table>
-        { this.state.links.prev && <button onClick={this.previous}>Previous</button> }
-        { this.state.links.next && <button onClick={this.next}>Next</button>}
+        { this.state.links.prev && <button className={"button"} onClick={this.previous}>Previous</button> }
+        { this.state.links.next && <button className={"button"} onClick={this.next}>Next</button>}
       </div>
     )
   }
