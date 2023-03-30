@@ -26,7 +26,7 @@ class DogBreeds extends React.Component {
 
   // Load initial page.
   componentDidMount() {
-    this.loadData(`jsonapi/hd_entry/hd_entry?page[limit]=${this.state.pageSize}`);
+    this.loadData(`/jsonapi/hd_entry/hd_entry?page[limit]=${this.state.pageSize}`);
   }
 
   // Load the previous page
