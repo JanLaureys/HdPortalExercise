@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39de325ac95254cd54046186f72b3b29",
+    "content-hash": "1e671cdd67a33e9ac89ab561ed4c7113",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1279,68 +1279,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
-            }
-        },
-        {
-            "name": "drupal/component",
-            "version": "1.0.0-rc4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/component.git",
-                "reference": "1.0.0-rc4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/component-1.0.0-rc4.zip",
-                "reference": "1.0.0-rc4",
-                "shasum": "44d6e3978650f2b4a23e54455dbb9339fbc72595"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-rc4",
-                    "datestamp": "1669395939",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Ron Northcutt (rlnorthcutt)",
-                    "homepage": "https://www.drupal.org/u/rlnorthcutt",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "kevinfunk",
-                    "homepage": "https://www.drupal.org/user/414328"
-                },
-                {
-                    "name": "rlnorthcutt",
-                    "homepage": "https://www.drupal.org/user/116893"
-                },
-                {
-                    "name": "vipin.mittal18",
-                    "homepage": "https://www.drupal.org/user/319716"
-                },
-                {
-                    "name": "vishalkhode",
-                    "homepage": "https://www.drupal.org/user/2439156"
-                }
-            ],
-            "description": "Easily add JS components to Drupal as blocks, with only a single yml file.",
-            "homepage": "https://drupal.org/project/component",
-            "support": {
-                "source": "https://git.drupalcode.org/project/component",
-                "issues": "https://drupal.org/project/issues/component"
             }
         },
         {
@@ -6550,9 +6488,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "drupal/component": 5
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
