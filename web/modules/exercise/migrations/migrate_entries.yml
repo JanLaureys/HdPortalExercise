@@ -1,0 +1,20 @@
+id: migrate_entries
+migration_tags:
+  - CSV
+label: 'Dog Breeds Migration'
+source:
+  plugin: csv
+  path: /var/www/html/web/modules/exercise/artifacts/dogbreeds.csv
+  ids: [id, uuid]
+process:
+  label: title
+  uuid: uuid
+  uid:
+    plugin: default_value
+    default_value: 1
+  data: data
+destination:
+  plugin: 'entity:hd_entry'
+migration_dependencies:
+  required: {  }
+  optional: {  }

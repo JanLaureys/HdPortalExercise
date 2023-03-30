@@ -1,0 +1,10 @@
+entity.hd_entry.settings:
+  title: 'Entry'
+  description: 'Configure an Entry entity type.'
+  route_name:  entity.hd_entry.settings
+  parent: system.admin_structure
+entity.hd_entry.collection:
+  title: 'Entries'
+  description: 'List of entries.'
+  route_name: entity.hd_entry.collection
+  parent: system.admin_content

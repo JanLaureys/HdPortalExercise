@@ -1,0 +1,16 @@
+administer exercise configuration:
+  title: 'Administer exercise configuration'
+  description: 'Optional description.'
+  restrict access: true
+
+administer entry:
+  title: 'Administer entry settings'
+  restrict access: true
+delete entry:
+  title: Delete entry
+create entry:
+  title: Create entry
+view entry:
+  title: View entry
+edit entry:
+  title: Edit entry

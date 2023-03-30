@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Provides an entry entity type.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\exercise\Entity\HdEntry;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function exercise_theme() {
+  return [
+    'hd_entry' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for entry templates.
+ *
+ * Default template: hd-entry.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the entry information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_hd_entry(array &$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function exercise_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_reassign':
+      // Anonymize entries.
+      $storage = \Drupal::entityTypeManager()->getStorage('hd_entry');
+      $hd_entry_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->execute();
+      foreach ($storage->loadMultiple($hd_entry_ids) as $hd_entry) {
+        $hd_entry->setOwnerId(0);
+        $hd_entry->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function exercise_user_predelete(UserInterface $account) {
+  // Delete entries.
+  $storage = \Drupal::entityTypeManager()->getStorage('hd_entry');
+  $hd_entry_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->execute();
+  $hd_entries = $storage->loadMultiple($hd_entry_ids);
+  $storage->delete($hd_entries);
+  // Delete old revisions.
+  $hd_entry_ids = $storage->getQuery()
+    ->allRevisions()
+    ->condition('uid', $account->id())
+    ->execute();
+  foreach (array_keys($hd_entry_ids) as $revision_id) {
+    $storage->deleteRevision($revision_id);
+  }
+}

@@ -1,0 +1,7 @@
+entity.hd_entry.settings:
+  path: 'admin/structure/hd-entry'
+  defaults:
+    _form: '\Drupal\exercise\Form\HdEntrySettingsForm'
+    _title: 'Entry'
+  requirements:
+    _permission: 'administer entry'

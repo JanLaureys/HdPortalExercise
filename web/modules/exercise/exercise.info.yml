@@ -1,0 +1,9 @@
+name: Exercise
+type: module
+description: Provides data entry for dog breeds.
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:jsonapi
+  - drupal:block
+  - migrate_source_csv:migrate_source_csv

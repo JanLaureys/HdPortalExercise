@@ -1,0 +1,10 @@
+entity.hd_entry.edit_form:
+  route_name: entity.hd_entry.edit_form
+  group: hd_entry
+  title: Edit
+
+entity.hd_entry.delete_form:
+  route_name: entity.hd_entry.delete_form
+  group: hd_entry
+  title: Delete
+  weight: 10
